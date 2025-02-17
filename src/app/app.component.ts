@@ -1,12 +1,22 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { HeaderComponent } from "./header/header.component";
+import { ContainComponent } from "./contain/contain.component";
+import { FooterComponent } from "./footer/footer.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
+  imports: [HeaderComponent,FooterComponent,ContainComponent],
+ // templateUrl: './app.component.html',
+ template:`
+ <div class="container">
+  <app-header></app-header>
+  <app-contain></app-contain>
+  <app-footer></app-footer>
+ </div>
+ `,
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'angular_Project_2';
 }
+ 
