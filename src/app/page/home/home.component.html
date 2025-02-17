@@ -1,1 +1,26 @@
-<p>home works!</p>
+
+<h1 class="text-center">Student Information</h1>
+<hr>
+<table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Class</th>
+        <th scope="col">City</th>
+        <th scope="col">Picture</th>
+      </tr>
+    </thead>
+    <tbody>
+        @for(user of users;track user.name){
+          <tr>
+           <td>{{user.id}}</td>
+           <td>{{user.name}}</td>
+           <td>{{user.class}}</td>
+           <td>{{user.city}}</td>
+           <td><img src="{{user.picture}}" alt="{{user.name}}"></td>
+           </tr>
+        }
+         
+        </tbody>
+  </table>
