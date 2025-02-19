@@ -5,26 +5,28 @@ import { FooterComponent } from './footer/footer.component';
 
 import { Router, RouterOutlet } from '@angular/router';
 import { HomeComponent } from './page/home/home.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @Component({
   selector: 'app-root',
-  imports: [HeaderComponent, FooterComponent, RouterOutlet, HomeComponent],
-  //templateUrl: './app.component.html',
-  template: `
-    <h1>Hello{{ title }}</h1> <!--Interpolation (one way)-->
-    <img [src]="imgSrc" [alt]="altImg" /><!-- Proparty Binding(one way)-->
+  imports: [HeaderComponent, FooterComponent, RouterOutlet, HomeComponent,SidebarComponent],
+ templateUrl: './app.component.html',
+
+  // template: `
+  //   <h1>Hello{{ title }}</h1> <!--Interpolation (one way)-->
+  //   <img [src]="imgSrc" [alt]="altImg" /><!-- Proparty Binding(one way)-->
     
-    <button (mouseover)="showAlert">Click Me</button> <!-- event binding -->
+  //   <button (mouseover)="showAlert">Click Me</button> <!-- event binding -->
     
-    <input (keyup)="oneKeyUp($event)" placeholder="Type something" /> 
+  //   <input (keyup)="oneKeyUp($event)" placeholder="Type something" /> 
     
     
 
-    <textarea name="massage" rows="4" (keyup)="oneKeyUp($event)" placeholder="Type something"></textarea>
-    <button (click)="showText">Show Text</button>
-    <p>{{ keyPressed }}</p><!-- tWO WAY BINDING -->
+  //   <textarea name="massage" rows="4" (keyup)="oneKeyUp($event)" placeholder="Type something"></textarea>
+  //   <button (click)="showText">Show Text</button>
+  //   <p>{{ keyPressed }}</p><!-- tWO WAY BINDING -->
    
-  `,
+  // `,
 
   styleUrl: './app.component.css',
   styles:`
@@ -46,17 +48,8 @@ export class AppComponent {
     this.keyPressed = (event.target as HTMLInputElement).value;
   }
 
-  storeText (event: key)
 
-  showAlert() {
-    alert('dummy alert');
-  }
 
-  showText() {
-    const element = document.querySelector('.textFromTextArea');
-    if (element) {
-      element.innerHTML = this.texFromTextArea
-    }
-  }
-  
+
+ 
 }
